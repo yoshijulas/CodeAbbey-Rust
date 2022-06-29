@@ -8,7 +8,6 @@ fn read_input() -> String {
 
 fn main() {
     let line = read_input();
-
     let mut answer = 0;
 
     for word in line.split_whitespace() {

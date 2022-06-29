@@ -17,9 +17,7 @@ fn main() {
             .map(|x| x.parse::<i32>().unwrap())
             .collect();
 
-        let (x, y) = (v[0], v[1]);
-
-        res.push(x + y);
+        res.push(v[0] + v[1]);
     }
 
     //print result

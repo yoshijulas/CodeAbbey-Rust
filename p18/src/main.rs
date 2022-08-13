@@ -14,6 +14,8 @@ fn calc_root(x: f64, num: u32) -> f64 {
     r
 }
 
+// Square Root
+
 fn main() {
     let num: i32 = read_input().trim().parse::<i32>().unwrap();
     let mut result: Vec<f64> = Vec::new();

@@ -6,17 +6,22 @@ fn read_input() -> String {
     input_str
 }
 
+// Sum in Loop
+
 fn main() {
-    let number = read_input().trim().parse::<i32>().unwrap();
-    let mut sum = 0;
+    let _number = read_input().trim().parse::<i32>().unwrap();
 
-    let input = read_input();
-    let mut input = input.split_whitespace();
+    let input: Vec<i32> = read_input()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
 
-    for _ in 0..number {
-        let number = input.next().unwrap().parse::<i32>().unwrap();
-        sum += number;
-    }
+    // for _ in 0..number {
+    //     let number = input.next().unwrap().parse::<i32>().unwrap();
+    //     sum += number;
+    // }
+
+    let sum: i32 = input.iter().sum();
 
     println!("{}", sum);
 }

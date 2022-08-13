@@ -5,6 +5,9 @@ fn read_input() -> String {
         .expect("Failed to read line");
     input_str
 }
+
+// Linear Function
+
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
 

@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Minimum of Three
+
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
 

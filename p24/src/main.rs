@@ -6,13 +6,15 @@ fn read_input() -> String {
     input_str
 }
 
+// Neumann's Random Generator
+
 fn main() {
     let _num: i32 = read_input().trim().parse().unwrap(); //Skips numbers of values, first line
     let mut res: Vec<i32> = Vec::new(); //Vector to store the result
 
     let v: Vec<String> = read_input()
         .split_whitespace()
-        .map(|x| x.to_string())
+        .map(std::string::ToString::to_string)
         .collect(); //Splits the input into a vector of strings
 
     for i in v {
@@ -20,8 +22,8 @@ fn main() {
         let mut random_number: i32 = i.parse().unwrap(); //Parses the string into an integer
         let number_string: String = i; //Stores the string in a variable
         let mut counter = 1; //Starts the counter at 1
-        let mut seen: Vec<String> = Vec::new(); //Creates a vector to store the seen numbers
-        seen.push(number_string); //Pushes the number read (as String) into the vector
+        let mut seen: Vec<String> = vec![number_string]; //Creates a vector to store the seen numbers
+                                                         // seen.push(number_string); //Pushes the number read (as String) into the vector
 
         loop {
             //Loops until the number is found duppled
@@ -37,7 +39,7 @@ fn main() {
                 rand_num = temp + &rand_num; //Adds the 0s to the front of the number
             }
 
-            rand_num = (&rand_num[2..6]).to_string(); //Removes the first two bytes and last 2 bytes
+            rand_num = rand_num[2..6].to_string(); //Removes the first two bytes and last 2 bytes
 
             if seen.contains(&rand_num) {
                 // If the number is already in the vector, breaks

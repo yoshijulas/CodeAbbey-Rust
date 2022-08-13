@@ -6,18 +6,20 @@ fn read_input() -> String {
     input_str
 }
 
+// Sum of digits
+
 fn main() {
-    let n = read_input().trim().parse::<usize>().unwrap();
+    let number = read_input().trim().parse::<usize>().unwrap();
 
     let mut res: Vec<i32> = Vec::new();
 
-    for _ in 0..n {
-        let v: Vec<i32> = read_input()
+    for _ in 0..number {
+        let vector_input: Vec<i32> = read_input()
             .split_whitespace()
             .map(|x| x.parse::<i32>().unwrap())
             .collect();
 
-        let (a, b, c) = (v[0], v[1], v[2]);
+        let (a, b, c) = (vector_input[0], vector_input[1], vector_input[2]);
 
         let mut op = a * b + c;
         let mut remainder;

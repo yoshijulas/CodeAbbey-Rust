@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Linear Congruential Generator
+
 fn main() {
     let num = read_input().trim().parse::<i32>().expect("Not a number");
     let mut res: Vec<i32> = Vec::new();

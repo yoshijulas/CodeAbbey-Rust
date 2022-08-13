@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+//Rounding
+
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
     let mut res: Vec<i32> = Vec::new();
@@ -17,7 +19,6 @@ fn main() {
             .collect();
 
         let temp: f32 = v[0] / v[1];
-
         res.push(temp.round() as i32);
     }
 

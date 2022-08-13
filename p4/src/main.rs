@@ -8,6 +8,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Minimum of Two
+
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
 
@@ -19,8 +21,7 @@ fn main() {
             .map(|x| x.parse::<i32>().unwrap())
             .collect();
 
-        let x = v[0];
-        let y = v[1];
+        let (x, y) = (v[0], v[1]);
 
         res.push(min(x, y));
     }

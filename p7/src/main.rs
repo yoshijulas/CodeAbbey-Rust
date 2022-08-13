@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Fahrenheit to Celsius
+
 fn main() {
     let mut res: Vec<i32> = Vec::new();
     let v: Vec<i32> = read_input()

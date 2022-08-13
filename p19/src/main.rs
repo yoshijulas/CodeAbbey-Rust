@@ -38,6 +38,8 @@ fn is_brackets_match(input: &str) -> bool {
     stack.is_empty()
 }
 
+// Matching Brackets
+
 fn main() {
     let num = read_input().trim().parse().unwrap();
     let mut answer = Vec::new();

@@ -6,9 +6,11 @@ fn read_input() -> String {
     input_str
 }
 
+// Sum "A+B"
+
 fn main() {
     let line = read_input();
-    let mut answer = 0;
+    let mut answer: i32 = 0;
 
     for word in line.split_whitespace() {
         answer += word.parse::<i32>().expect("Failed to parse word");

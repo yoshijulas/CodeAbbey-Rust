@@ -13,6 +13,8 @@ fn checksum(vec: &[i32]) -> i32 {
         .fold(0, |prev, curr| ((prev + curr) * seed) % modulo)
 }
 
+// Bubble in Array
+
 fn main() {
     let input = read_input();
     let mut input_vec: Vec<i32> = input

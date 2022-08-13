@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Two Printers
+
 fn main() {
     let num = read_input().trim().parse::<i32>().unwrap();
 
@@ -23,16 +25,16 @@ fn main() {
 
         for _ in 1..pages {
             if count_x > count_y {
-                count_y += y
+                count_y += y;
             } else {
-                count_x += x
+                count_x += x;
             }
         }
 
         if count_x > count_y {
-            res.push(count_y)
+            res.push(count_y);
         } else {
-            res.push(count_x)
+            res.push(count_x);
         };
     }
 

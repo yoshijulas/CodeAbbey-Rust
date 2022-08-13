@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Weighted sum of digits
+
 fn main() {
     let mut res: Vec<u32> = Vec::new();
 

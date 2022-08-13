@@ -6,12 +6,14 @@ fn read_input() -> String {
     input_str
 }
 
+// Average of an array
+
 fn main() {
-    let num: i32 = read_input().trim().parse().unwrap();
+    let number: i32 = read_input().trim().parse().unwrap();
 
     let mut result: Vec<i32> = Vec::new();
 
-    for _ in 0..num {
+    for _ in 0..number {
         let v: Vec<i64> = read_input()
             .split_whitespace()
             .map(|x| x.parse().unwrap())

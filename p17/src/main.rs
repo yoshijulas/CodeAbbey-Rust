@@ -6,11 +6,13 @@ fn read_input() -> String {
     input_str
 }
 
+// Array Checksum
+
 fn main() {
     let num: i32 = read_input().trim().parse().unwrap();
     let mut checksum = 0;
     let seed = 113;
-    let modulo = 10000007;
+    let modulo = 10_000_007;
 
     let v: Vec<i64> = read_input()
         .split_whitespace()

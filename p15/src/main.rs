@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Maximum of array
+
 fn main() {
     let input_vec: Vec<i32> = read_input()
         .split_whitespace()

@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Arithmetic Progression
+
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
 
@@ -19,7 +21,7 @@ fn main() {
 
         let (first_value, step, c) = (v[0], v[1], v[2]);
 
-        let mut sum = first_value + (c - 1.0) * step;
+        let mut sum = (c - 1.0).mul_add(step, first_value);
         sum = c * (first_value + sum) / 2.0;
 
         res.push(sum.round() as i32);
@@ -29,4 +31,5 @@ fn main() {
     for i in res {
         print!("{} ", i);
     }
+
 }

@@ -6,6 +6,8 @@ fn read_input() -> String {
     input_str
 }
 
+// Vowel Count
+
 fn main() {
     let vowels = vec!['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'y', 'Y'];
     let num: i32 = read_input().trim().parse().unwrap();

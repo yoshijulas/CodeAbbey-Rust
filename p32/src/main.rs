@@ -14,6 +14,7 @@ fn main() {
         .map(|x| x.parse::<i32>().unwrap())
         .collect();
 
+    // N = People, K = Steps
     let (n, k) = (input[0], (input[1] - 1));
 
     let mut numbers: Vec<i32> = (1..=n).collect();

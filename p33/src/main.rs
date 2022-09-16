@@ -16,13 +16,13 @@ fn main() {
 
     let binary: Vec<String> = input
         .iter()
-        .filter(|x| x.count_ones() % 2 == 0)// remove invalid characters
-        .map(|x| format!("{:08b}", x)) // add leading 0's to the binary string
+        .filter(|x| x.count_ones() % 2 == 0) // remove invalid characters
+        .map(|x| format!("{:08b}", x)) // add leading 0's to the binary string (8 bits)
         .collect();
 
     for i in &binary {
         let a = if i.starts_with('1') {
-            i.replacen('1', "0", 1) // remplace leading 1 with 0 to the binary string
+            i.replacen('1', "0", 1) // replace leading 1 with 0 to the binary string
         } else {
             i.to_string()
         };

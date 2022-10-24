@@ -6,7 +6,7 @@ fn read_input() -> String {
     input_str
 }
 
-//Rounding
+// Rounding
 
 fn main() {
     let n: i32 = read_input().trim().parse().unwrap();
@@ -24,6 +24,6 @@ fn main() {
 
     //print result
     for i in res {
-        print!("{} ", i);
+        print!("{i} ");
     }
 }

@@ -30,6 +30,6 @@ fn main() {
     }
 
     for r in result {
-        print!("{} ", r);
+        print!("{r} ");
     }
 }

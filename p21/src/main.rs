@@ -23,12 +23,11 @@ fn main() {
         .map(|x| x.parse::<i32>().unwrap())
         .collect();
 
-
     for i in input {
         res[i as usize - 1] += 1;
     }
 
     for r in res {
-        print!("{} ", r);
+        print!("{r} ");
     }
 }

@@ -11,5 +11,5 @@ fn read_input() -> String {
 fn main() {
     let input: String = read_input();
     let rev_input: String = input.chars().rev().collect();
-    print!("{}", rev_input);
+    print!("{rev_input}");
 }

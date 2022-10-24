@@ -36,6 +36,6 @@ fn main() {
     }
 
     for i in res {
-        print!("{} ", i);
+        print!("{i} ");
     }
 }

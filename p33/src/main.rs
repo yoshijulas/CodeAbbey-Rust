@@ -17,7 +17,7 @@ fn main() {
     let binary: Vec<String> = input
         .iter()
         .filter(|x| x.count_ones() % 2 == 0) // remove invalid characters
-        .map(|x| format!("{:08b}", x)) // add leading 0's to the binary string (8 bits)
+        .map(|x| format!("{x:08b}")) // add leading 0's to the binary string (8 bits)
         .collect();
 
     for i in &binary {

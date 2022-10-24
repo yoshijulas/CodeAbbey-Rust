@@ -19,8 +19,16 @@ fn main() {
             .map(|x| x.parse::<i32>().unwrap())
             .collect();
 
-        let (day1, hour1, min1, mut sec1, day2, hour2, min2, mut sec2) =
-            (vector_input[0], vector_input[1], vector_input[2], vector_input[3], vector_input[4], vector_input[5], vector_input[6], vector_input[7]);
+        let (day1, hour1, min1, mut sec1, day2, hour2, min2, mut sec2) = (
+            vector_input[0],
+            vector_input[1],
+            vector_input[2],
+            vector_input[3],
+            vector_input[4],
+            vector_input[5],
+            vector_input[6],
+            vector_input[7],
+        );
 
         sec1 += (day1 * 86400) + (hour1 * 3600) + (min1 * 60);
         sec2 += (day2 * 86400) + (hour2 * 3600) + (min2 * 60);

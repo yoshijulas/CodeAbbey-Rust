@@ -46,10 +46,10 @@ fn main() {
 
     for _ in 0..num {
         let input = read_input();
-        answer.push(if is_brackets_match(&input) { 1 } else { 0 });
+        answer.push(i32::from(is_brackets_match(&input)));
     }
 
     for a in answer {
-        print!("{} ", a);
+        print!("{a} ");
     }
 }

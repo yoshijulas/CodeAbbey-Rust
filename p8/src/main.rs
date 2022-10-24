@@ -29,7 +29,6 @@ fn main() {
 
     //print result
     for i in res {
-        print!("{} ", i);
+        print!("{i} ");
     }
-
 }

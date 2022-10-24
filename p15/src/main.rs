@@ -14,5 +14,9 @@ fn main() {
         .map(|x| x.parse().unwrap())
         .collect();
 
-    print!("{} {}", input_vec.iter().max().unwrap(), input_vec.iter().min().unwrap());
+    print!(
+        "{} {}",
+        input_vec.iter().max().unwrap(),
+        input_vec.iter().min().unwrap()
+    );
 }

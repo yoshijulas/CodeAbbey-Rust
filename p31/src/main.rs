@@ -30,6 +30,6 @@ fn main() {
     }
 
     for i in res {
-        println!("{}", i);
+        println!("{i}");
     }
 }

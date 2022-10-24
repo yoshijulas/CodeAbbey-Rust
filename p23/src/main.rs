@@ -33,5 +33,5 @@ fn main() {
         }
     }
 
-    print!("{} {}", counter, checksum(&input_vec));
+    print!("{counter} {}", checksum(&input_vec));
 }

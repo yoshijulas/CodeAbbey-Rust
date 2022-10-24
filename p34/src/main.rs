@@ -9,7 +9,9 @@ fn read_input() -> String {
 }
 
 fn f(x: f64, a: f64, b: f64, c: f64, d: f64) -> f64 {
-    a.mul_add(x, b * x.powf(1.5)) - c * (-x / 50.0).exp() - d
+    // a.mul_add(x, b * x.powf(1.5)) - c * (-x / 50.0).exp() - d
+    // A * x + B * sqrt(x ^ 3) - C * exp(-x / 50) - D = 0
+    c.mul_add(-(-x / 50.0).exp(), a.mul_add(x, b * x.powf(1.5))) - d
 }
 
 // Binary Search
@@ -57,6 +59,6 @@ fn main() {
         res_vec.push(x_middle);
     }
     for i in res_vec {
-        print!("{:.12} ", i);
+        print!("{i:.12} ");
     }
 }

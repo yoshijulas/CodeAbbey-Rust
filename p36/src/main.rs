@@ -30,7 +30,10 @@ fn main() {
             .collect();
 
         let (numbers, true_values) = (input_vec[0], input_vec[1]);
-        assert!(numbers.to_string().len() == 4, "Should be only 4 digits numbers");
+        assert!(
+            numbers.to_string().len() == 4,
+            "Should be only 4 digits numbers"
+        );
 
         let combination_tuple = Posibilities {
             numbers,
@@ -70,7 +73,7 @@ fn logic_to_solve(
             for (c, k) in num_c.iter().enumerate() {
                 for (d, l) in num_d.iter().enumerate() {
                     if *i && *j && *k && *l {
-                        let bforce_all_string = format!("{}{}{}{}", a, b, c, d);
+                        let bforce_all_string = format!("{a}{b}{c}{d}");
 
                         let mut valid = true;
 
@@ -92,7 +95,7 @@ fn logic_to_solve(
                         }
 
                         if valid {
-                            println!("{}", bforce_all_string);
+                            println!("{bforce_all_string}");
                         }
                     }
                 }

@@ -23,5 +23,5 @@ fn main() {
 
     let sum: i32 = input.iter().sum();
 
-    println!("{}", sum);
+    println!("{sum}");
 }

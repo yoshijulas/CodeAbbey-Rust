@@ -58,6 +58,6 @@ fn main() {
 
     for i in res {
         //Prints the result
-        print!("{} ", i);
+        print!("{i} ");
     }
 }

@@ -16,5 +16,5 @@ fn main() {
         answer += word.parse::<i32>().expect("Failed to parse word");
     }
 
-    println!("{}", answer);
+    println!("{answer}");
 }

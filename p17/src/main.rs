@@ -23,5 +23,5 @@ fn main() {
         checksum = ((checksum + v[i as usize]) * seed) % modulo;
     }
 
-    print!("{}", checksum);
+    print!("{checksum}");
 }

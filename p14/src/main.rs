@@ -33,5 +33,5 @@ fn main() {
         }
     }
 
-    print!("{}", res);
+    print!("{res}");
 }

@@ -8,34 +8,18 @@ fn read_input() -> String {
 
 fn is_brackets_match(input: &str) -> bool {
     let mut stack: Vec<char> = Vec::new();
-    for c in input.chars() {
-        match c {
-            '(' | '{' | '[' | '<' => stack.push(c),
-            ')' => {
-                if stack.pop() != Some('(') {
-                    return false;
-                }
-            }
-            '}' => {
-                if stack.pop() != Some('{') {
-                    return false;
-                }
-            }
-            ']' => {
-                if stack.pop() != Some('[') {
-                    return false;
-                }
-            }
-            '>' => {
-                if stack.pop() != Some('<') {
-                    return false;
-                }
-            }
-
-            _ => continue,
+    let brackets = input.chars().all(|c| match c {
+        '(' | '{' | '[' | '<' => {
+            stack.push(c);
+            true
         }
-    }
-    stack.is_empty()
+        ')' => stack.pop() == Some('('),
+        '}' => stack.pop() == Some('{'),
+        ']' => stack.pop() == Some('['),
+        '>' => stack.pop() == Some('<'),
+        _ => true,
+    });
+    stack.is_empty() && brackets
 }
 
 // Matching Brackets

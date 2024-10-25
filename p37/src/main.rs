@@ -1,3 +1,5 @@
+#![allow(clippy::cast_possible_truncation)]
+
 fn read_input() -> String {
     let mut input_str = String::new();
     std::io::stdin()
@@ -8,63 +10,21 @@ fn read_input() -> String {
 
 // Mortgage Calculator
 
+fn mortage(loan_size: f32, interest_rate: f32, n_periods: f32) -> i32 {
+    let rate = interest_rate / 1200.0; // 12 months / 100 for percentage
+    let amortization =
+        loan_size * ((rate * (1.0 + rate).powf(n_periods)) / ((1.0 + rate).powf(n_periods) - 1.0));
+
+    amortization.ceil() as i32
+}
+
 fn main() {
-    let input_vec: Vec<u32> = read_input()
+    let inp_vec: Vec<f32> = read_input()
         .split_whitespace()
-        .map(|x| x.parse().unwrap())
+        .map(|x| x.parse::<f32>().unwrap())
         .collect();
 
-    let (purchase_price, interest_rate, months_to_pay) =
-        (input_vec[0] as f32, input_vec[1] as f32, input_vec[2]);
+    let (loan_size, interest_rate, lenght_in_months) = (inp_vec[0], inp_vec[1], inp_vec[2]);
 
-    // binary_search(purchase_price, months_to_pay, interest_rate);
-
-    brute_force(purchase_price, months_to_pay, interest_rate);
-}
-
-fn brute_force(purchase_price: f32, months_to_pay: u32, interest_rate: f32) {
-    for i in 0..100_000_000 {
-        let mut new_price: f32 = purchase_price;
-        for _ in 0..months_to_pay {
-            new_price += new_price * (interest_rate / 12.0) / 100.0;
-            new_price -= i as f32;
-            new_price = new_price.round();
-        }
-
-        if new_price <= 0.0 {
-            println!("{i}");
-            break;
-        }
-    }
-}
-
-fn _binary_search(purchase_price: f32, months_to_pay: u32, interest_rate: f32) {
-    // use Binary search to find the monthly payment
-    let mut min: f32 = 0.0;
-    let mut max: f32 = 100_000_000.0;
-    loop {
-        let middle: f32 = (min + max) / 2.0;
-        let middle_rounded: i32 = middle.round() as i32;
-        let mut new_price = purchase_price;
-
-        for _ in 0..months_to_pay {
-            new_price += new_price * (interest_rate / 12.0) / 100.0;
-            new_price -= middle_rounded as f32;
-            if new_price < 0.0 {
-                break;
-            }
-            new_price = new_price.round();
-        }
-
-        if (new_price).abs() <= 16.0 {
-            println!("{middle_rounded}");
-            break;
-        }
-
-        if new_price > 0.0 {
-            min = middle_rounded as f32;
-        } else {
-            max = middle_rounded as f32;
-        }
-    }
+    print!("{} ", mortage(loan_size, interest_rate, lenght_in_months));
 }
